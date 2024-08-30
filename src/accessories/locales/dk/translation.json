@@ -1,0 +1,34 @@
+{
+  "nextfilm": "Næste film",
+  "nexttoform": "Yderligere",
+  "further": "Mere",
+  "wintext": "Der er 3x2 fribilletter til biografen 51Stufen at vinde. For at kontakte dig har vi brug for din navn og din e-mailadresse. ",
+
+  "yourname": "Din navn: ",
+  "placeholderName": "Navn",
+
+  "yourmail": "Din e-mail: ",
+
+  "feedback": "Er der andet, du vil fortælle os? Så kan du slippe af med det her.",
+  "placeholderFeedback": "Skriv det her",
+  "infonotice": "(Vi vil ikke bruge dine data til andet end at kontakte dig, hvis du vinder.)",
+  "datasec1": "Samtykke til",
+  "datasec2": " privatlivspolitikken*",
+  "send": "Send",
+  "again": "Gennemse igen",
+
+  "errorFilm": "En eller flere film har stadig 0 point. Vil du også give de andre film point? Hvis ikke, skal du blot trykke på Send igen.",
+  "errorFeedback": "Det er for mange tegn. Maks. 455 tegn.",
+  "errorMail": "Det er for mange tegn. Maks. 254 tegn.",
+  "errorName": "Det er for mange tegn. Maks. 120 tegn.",
+  "errorDatasec": "Samtykke til privatlivspolitikken er nødvendig.",
+  "errorTime": "Linkets gyldighed er desværre udløbet.",
+  "errorUsed": "URL ikke fundet eller allerede brugt.",
+
+  "thanks": "Mange tak for din deltagelse, ",
+  "win": "Vi vender tilbage til dig, når du har vundet.",
+  "noHearts": "Ingen hjerter bliver scoret",
+  "follow": "Følg os på",
+  "all":"Alt om",
+  "all2":"på vores hjemmeside."
+}

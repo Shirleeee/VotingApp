@@ -1,0 +1,37 @@
+{
+  "nextfilm": "Nachste Film",
+  "nexttoform": "Weiter",
+  "further": "Weiter",
+  "wintext": "Es gibt 3x2 Freikarten für das 51Stufen Kino zu gewinnen. Um dich zu kontaktieren, benötigen wir dazu deinen Namen und deine E-Mail Adresse. ",
+
+  "yourname": "Deinen Namen: ",
+  "placeholderName": "Name",
+  "yourmail": "Deine E-mail: ",
+
+  "feedback": "Willst du uns sonst noch etwas mitteilen? Dann kannst du es hier loswerden.",
+  "placeholderFeedback": "Schreibs hier rein",
+
+  "infonotice": "(Wir geben deine Daten nicht weiter und speichern sie auch nicht für irgendwas.)",
+  "datasec1": "Einwilligung zur",
+  "datasec2": " Datenschutzerklärung*",
+  "send": "Absenden!",
+  "again": "Nochmal durchsehen",
+
+  "errorFilm": "Da sind einer oder mehrere Filme mit 0 Punkte bewertet worden. Willst du diesen Filmen auch noch Punkte geben? Wenn nicht drücke einfach auf Absenden",
+  "errorFeedback": "Das sind zu viele Zeichen. Max. 455 Zeichen.",
+  "errorMail": "Das sind zu viele Zeichen. Max. 254 Zeichen.",
+  "errorName": "Das sind zu viele Zeichen. Max. 120 Zeichen.",
+  "errorDatasec": "Die Einwilligung der Datenschutzerklärung ist notwendig.",
+  "errorTime": "Die Gültigkeit deines QR-Codes ist abgelaufen.",
+  "errorUsed": "URL nicht gefunden oder wurde bereits verwendet",
+
+  "thanks": "Vielen lieben Dank für deine Teilnahme, ",
+  "win": "Wir melden uns bei dir, wenn du gewonnen hast.",
+  "noHearts": "Keine Herzen werden nicht gewertet",
+  "follow": "Folgt uns auf:",
+  "all":"Alles über",
+  "all2":"auf unserer Website."
+
+
+
+}

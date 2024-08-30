@@ -1,0 +1,22 @@
+.dates-table,.feedback-table {
+    width: 100%;
+    border-collapse: collapse;
+  
+    thead {
+      border: 1px solid var(--font-color);
+    }
+    .datesBlock{
+      padding: 1rem;
+      width: 5.1rem;
+    }
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border: 1px solid var(--font-color);
+    }
+    th {
+      // background-color: var(--highlight1);
+    }
+    
+  }

@@ -1,0 +1,249 @@
+{% extends 'layout.html' %} {%block content %}
+
+    <div class="eva-wrapper">
+<div class="eva-container">
+    <div class="chartwrapper tabs">
+      <h2 class="sr-only">Auswertung</h2>
+    <div class="header-btn-container">
+        
+        <div class="linksblocks-container" role="tablist">
+
+          {% for item in alltheBlocks %}
+            {% if loop.first %}
+                  <button id="tab-{{ item.block }}" aria-selected="true" aria-controls="tab-panel-{{ item.block }}" role="tab" type="button" tabindex="0">
+                      {{ item.block }}
+                  </button>
+            {% else %}
+                <button id="tab-{{ item.block }}" aria-selected="false" aria-controls="tab-panel-{{ item.block }}" role="tab" type="button" tabindex="-1">
+                    {{ item.block }}
+                </button>
+            {% endif %}
+         
+          {% endfor %}    
+                  
+        </div>
+
+        <div>
+            <label for="switch" class="sr-only">Button um Updates anzuhalten und fortzusetzen</label>
+            <input class="switchUpdate" id="switch" type="button" value="Stop Updates" /> 
+        </div>
+       
+    </div>
+        {% for  block in filmObjs %}      
+
+ 
+          <div id="tab-panel-{{block.blockname}}" aria-labelledby="tab-{{block.blockname}}"  role="tabpanel" tabindex="0">
+
+            <div class="tabpanel-header" data-index="{{loop.index}}">
+              <h2 class="sr-only"> {{block.blockname}} </h2>    
+              {% if block.blockname !== "wbp" and block.blockname !== "wbd" %}
+              <p class="winnerText">
+                Der Gewinnerfilm ist <span> {{winnerMC.blockWinner}}</span> mit dem
+                Ergebnis <span> {{winnerMC.value}} %</span> aus dem Block
+                <span> {{winnerMC.blockid}}</span>
+              </p>
+              {% endif %}
+               <p class="voted-p">{{block.amountVotesByBlock}} x abgestimmt => {{block.amountVotesByBlock*6}}  Maximale Punktzahl</p>
+            </div>
+            <div class="chartPanel-container" >
+                
+              <svg class="chart" height="{{block.length*100}}">
+  
+                      <desc id="chartinfo-{{block.blockname}}">Diagramm Gewinner</desc>
+  
+                      {% set currentIndex = 1 %}
+  
+                      {% for  item in block %}
+                          <g class="bar nColor accordion" data-index="{{loop.index}}" {% if item.total === block.blockWin %} class="wColor" {% endif %}>
+                              <rect class="dynamic-width" data-total="{{ item.total }}" height="70" y="{{currentIndex}}" {% if item.total === block.blockWin %} fill="#eed499"{% endif %} rx="5px" ry="50px" stroke-linejoin="round" />
+  
+                              <text class="svgText" x={{ 10}} y={{currentIndex + 42}}>{{loop.index}}</text>
+                              <text class="svgText" x={{ 50}} y={{currentIndex + 27}}>{{item.filmtitle}}</text>
+                              <text class="svgText summed" x={{ 50}} y={{currentIndex + 57}}>{{block.summedVotes[item.blockFilm_id]}} von {{block.votesPoint100[item.blockFilm_id]}} </text>
+                          
+                          
+                              <text class="svgText" x={{ 180 }} y={{currentIndex + 57}}>=> {{item.total}} % </text>
+                                  
+                          </g>
+                  
+                          {% set currentIndex = currentIndex + 100 %}
+                          
+                      {% endfor %}	
+              </svg>             
+              <div class="panel-container">
+  
+                      {% for  item in block %}
+                      <table data-index="{{loop.index}}">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="sr-only">Kategorien</th>
+                                <th scope="col">{{item.blockFilm_id}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">0 x</th>
+                                <td class="zero">{{block.allZero[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1 x</th>
+                                <td class="one">{{block.allOne[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2 x</th>
+                                <td class="two">{{block.allTwo[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3 x</th>
+                                <td class="three">{{block.allThree[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4 x</th>
+                                <td class="four">{{block.allFour[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5 x</th>
+                                <td class="five">{{block.allFive[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6 x</th>
+                                <td class="six">{{block.allSix[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">P</th>
+                                <td class="summedVotes">{{block.summedVotes[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">mP</th>
+                                <td class="votesPoint100">{{block.votesPoint100[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">%</th>
+                                <td class="total">{{item.total}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+  
+                      {% endfor %}	
+  
+                </div>
+  
+            </div>
+        </div>
+        
+      {% else %}
+          <div id="tab-panel-{{block.blockname}}" aria-labelledby="tab-{{block.blockname}}"  role="tabpanel"  tabindex="-1">
+            <div>
+              <h2> {{block.blockname}} </h2>          
+               <p class="voted-p">{{amountVotesByBlock}} x abgestimmt</p>
+               {{loop.index}}
+         </div>
+            <div class="chartPanel-container" >
+                      
+              <svg class="chart" height="{{block.length*100}}">
+
+                      <desc id="chartinfo">Diagramm Gewinner</desc>
+
+                      {% set currentIndex = 1 %}{% set containerWidth = 800 %}
+
+                      {% for  item in block %}
+                          <g class="bar nColor accordion" data-index="{{loop.index}}" {% if item.total === block.blockWin %} class="wColor" {% endif %}>
+                              <rect class="dynamic-width" data-total="{{ item.total }}" width="{{item.total}}%"  height="70" y="{{currentIndex}}" {% if item.total === block.blockWin %} fill="#eed499"{% endif %} rx="5px" ry="50px" stroke-linejoin="round" />
+
+                              <text class="svgText" x={{ 10}} y={{currentIndex + 42}}>{{loop.index}}</text>
+                              <text class="svgText" x={{ 50}} y={{currentIndex + 27}}>{{item.filmtitle}}</text>
+                              <text class="svgText summed" x={{ 50}} y={{currentIndex + 57}}>{{block.summedVotes[item.blockFilm_id]}} Punkte von {{block.votesPoint100[item.blockFilm_id]}} </text>
+                          
+                              {% set rectWidth = (item.total | float) / 100 * containerWidth %}
+                              {% set totalX = rectWidth + 70 %}
+                              <text class="total" x={{ totalX }} y={{currentIndex + 40}}> {{item.total}} % </text>
+                                  
+                          </g>
+                  
+                          {% set currentIndex = currentIndex + 100 %}
+                          
+                      {% endfor %}	
+              </svg>    
+
+              <div class="panel-container">
+
+                      {% for  item in block %}
+                      <table>
+                        <thead>
+                            <tr>
+                                <th scope="col" class="sr-only">Kategorien</th>
+                                <th scope="col">{{item.blockFilm_id}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">0 x</th>
+                                <td class="zero">{{block.allZero[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1 x</th>
+                                <td class="one">{{block.allOne[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2 x</th>
+                                <td class="two">{{block.allTwo[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3 x</th>
+                                <td class="three">{{block.allThree[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4 x</th>
+                                <td class="four">{{block.allFour[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5 x</th>
+                                <td class="five">{{block.allFive[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6 x</th>
+                                <td class="six">{{block.allSix[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">P</th>
+                                <td class="summedVotes">{{block.summedVotes[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">mP</th>
+                                <td class="votesPoint100">{{block.votesPoint100[item.blockFilm_id]}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">%</th>
+                                <td class="total">{{item.total}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                      {% endfor %}	
+
+              </div>
+
+            </div>   
+          </div> 
+
+        {% endfor %}	
+
+</div>
+</div>
+
+<script type="module">
+  import * as reload from "/js/reload.js";
+  reload.init();
+</script>
+
+  <script type="module">
+    import * as evaTabPanel from "/js/evaTabPanel.js";
+    evaTabPanel.init();
+  </script>
+
+<script type="module">
+  import * as svgViewBox from "/js/svgViewBox.js";
+  svgViewBox.init();
+</script>
+
+{%endblock%}

@@ -1,0 +1,51 @@
+.email__input {
+  margin-block: 1rem;
+}
+
+.datenschutz__input {
+  margin-block: 1rem;
+  display: flex;
+
+  & > label {
+    margin-left: 1rem;
+    position: relative;
+    cursor: pointer;
+    padding-left: 28px;
+    line-height: 1.2;
+    & > a {
+      text-decoration: underline;
+      line-height: 1.2;
+      padding-left: 0.3em;
+    }
+  }
+
+  & > label::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 1px solid #131514;
+    background-color: #fff;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    box-sizing: border-box;
+  }
+
+  & > input:checked + label::before {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTAzcHgiIGhlaWdodD0iOTBweCIgdmlld0JveD0iMCAwIDEwMyA5MCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggNTQuMSAoNzY0OTApIC0gaHR0cHM6Ly9za2V0Y2hhcHAuY29tIC0tPgogICAgPHRpdGxlPmNoZWNrPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSI+CiAgICAgICAgPGcgaWQ9ImNoZWNrIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMC4yMDcwOTYsIDEwLjAwMDAwMCkiIHN0cm9rZT0iIzU4NjA1RiIgc3Ryb2tlLXdpZHRoPSIxNSI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0yOS4yOTI5MDQzLDY5LjUgTDgyLjI5MjkwNDMsMC41IiBpZD0iTGluZSI+PC9wYXRoPgogICAgICAgICAgICA8cGF0aCBkPSJNMi41LDcxLjI0NjgxNTQgTDI3LjAwMTcwMDUsNDIuNzQ2OTY5OCIgaWQ9IkxpbmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1LjAwMDAwMCwgNTcuMjQ2ODE1KSByb3RhdGUoLTkxLjAwMDAwMCkgdHJhbnNsYXRlKC0xNS4wMDAwMDAsIC01Ny4yNDY4MTUpICI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);
+    background-size: 14px 14px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+}
+
+.datasec__checkbox-input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.datasec__checkbox-input:focus + label::before {
+  border-color: var(--highlight2); /* Border color when focused */
+  box-shadow: 0 0 15px var(--highlight2); /* Optional: Add a shadow for better visibility */
+}

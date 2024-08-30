@@ -1,0 +1,56 @@
+.grid_container__links {
+    display: grid;
+    margin-inline: .1rem;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(1, minmax(min-content, 18rem));
+    grid-template-rows: auto;
+    // margin: 1rem 0 0 0rem;
+    grid-template-areas:
+        "filmkorte__link filmkorteSocial__icons"
+    ;
+    // gap: 2rem;
+    justify-content: center;
+
+    & div .folgtuns {
+        margin-right: 2rem;
+    }
+}
+
+.wintext{
+  
+    margin-bottom: 1rem;
+
+}
+
+.filmkorte__link {
+    // grid-area: filmkorte__link;
+    // margin: 1rem 0 0 .8rem;
+    width: 100%;
+    // background-color: transparent;
+    place-self: center;
+
+    & .filmkorteLink>svg {
+        margin-block: .5rem;
+    }
+}
+
+.filmkorteSocial__icons {
+    grid-area: filmkorteSocial__icons;
+    display: flex;
+    place-self: center;
+    width: 80%;
+    margin: 1rem 0 0 1rem;
+    gap: 1rem;
+}
+
+
+.logoArea>div,
+.textLogos {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+
+    place-items: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="#" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flensburger Kurzfilmtage 2024</title>
+    <link rel="preload" href="/scss/style.css" as="style" />
+
+    <link rel="preload" href="/fontawesome/css/solid.css" as="style" />
+    <link rel="preload" href="/fontawesome/css/fontawesome.css" as="style" />
+
+    <link rel="stylesheet" href="/scss/style.css" >
+    <link rel="stylesheet" href="/fontawesome/css/fontawesome.css" >
+    <link rel="stylesheet" href="/fontawesome/css/solid.css" >
+  </head>
+
+  <body>
+    <header class="main-container  ">
+      <div class="header-container {{headerEva}}">
+        
+            <img id="kftLogo" src="/img/Fl-Kt-Logo.png" alt="Flensburger Kurzfilmtage Logo">
+     
+        {% if films %}       
+            <div class="divright">
+              <h1>Flensburger Kurzfilmtage 2024</h1>
+              <h2>{{blockContent[0].blocktitle}}</h2>
+        
+              <h3>{{blockContent[0].blocksubline}}</h3>
+            <div>         
+        {% endif %}
+
+      </div>
+      {# <div class="intro__text">
+        {% if errors.name %}
+        <p class="error errUpper"  {% if blockname === "wbd" %}data-i18n="block.errorName"{% endif %}>Name: {{errors.name}}</p>
+        {% endif %} {% if errors.email1 %}
+        <p class="error errUpper"  {% if blockname === "wbd" %}data-i18n="block.errorMail"{% endif %}>Email: {{errors.email}}</p>
+        {% endif %}   
+        
+        {% if errors.feedback %}
+        <p class="error errUpper"  {% if blockname === "wbd" %}data-i18n="block.errorFeedback"{% endif %}>Feedback: {{errors.feedback}}</p>
+        {% endif %} 
+      </div> #}
+
+
+      {% if errors %}
+      <input id="hiddenErrors" class="datasec__checkbox-input" type="text" hidden value="{{errors}}">
+      {% endif %}
+      {# //!important for saving in form #}
+
+
+      <div class="menu-icon {{headerBlock}}">        
+        <div class="menu">
+          <h1>Flensburger Kurzfilmtage 2024</h1>
+          <input type="checkbox" id="menu__toggle" />
+          <label for="menu__toggle" class="menu__btn" tabindex="0">
+            <span> Menü </span>
+          </label>  
+          <nav>
+              <ul class="eva-headerlist">
+                {% if userAuth %}
+             
+                <li>
+                  <a href="/evaqZaa3/">Evaluation</a>
+                </li>
+                {% if role == 'admin' %}
+          
+                <li>
+                  <a href="/feedback">Feedback</a>
+                </li>
+
+                <li>
+                  <a href="/winner">Gewinner</a>
+                </li>
+
+
+                <li><a href="/WBBoverview">Wettbewerbsblöcke</a></li>
+
+                <li>
+                  <a class="logOut" href="/logout/{{userid}}">Log Out</a>
+                </li>
+
+                {% endif %}
+
+          
+                {% else %}
+        
+                <li>
+                  <a href="/register">Registrieren</a>
+                </li>
+          
+                <li>
+                  <a href="/login">Login</a>
+                </li>
+                {% endif %}
+              </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    {%block evaHeader%} 
+    <div class=" padding-inline">
+
+  
+    </div>
+   
+   
+  </div>
+
+    {%endblock%}
+    <main>{%block content%} {%endblock%}</main>
+
+    <style>
+      @import url("https://p.typekit.net/p.css?s=1&k=pov1erc&ht=tk&f=39295&a=97514151&app=typekit&e=css");
+    
+    @font-face {
+      font-family: "gill-sans-nova";
+      src: url("https://use.typekit.net/af/7f1946/00000000000000007735bb73/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+          format("woff2"),
+        url("https://use.typekit.net/af/7f1946/00000000000000007735bb73/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+          format("woff"),
+        url("https://use.typekit.net/af/7f1946/00000000000000007735bb73/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+          format("opentype");
+      font-display: swap;
+      font-style: normal;
+      font-weight: 700;
+      font-stretch: normal;
+    }
+    
+    .tk-gill-sans-nova {
+      font-family: "gill-sans-nova", sans-serif;
+      font-display: swap;
+    }
+    
+    </style>
+
+
+        <script type="module">
+          import * as onScroll from "/js/onScroll.js";
+          onScroll.init();
+        </script> 
+        
+         <script type="module">
+          import * as menu from "/js/menu.js";
+          menu.init();
+        </script> 
+    
+
+
+  </body>
+</html>

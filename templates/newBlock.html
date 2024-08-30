@@ -1,0 +1,53 @@
+{% extends 'layout.html' %} {%block content %}
+
+
+  <div class="feedbackeva panel-container">
+    <h2>Neuen Wettbewerbsblock erstellen</h2>    
+   
+          <form action="/addNewBlock" method="POST">
+            <input type="hidden" name="_csrf" value="{{ form.csrf }}" />
+
+         
+              {% set keyblock = 'block' + blockid %}
+
+              <label class="" for="block{{ blockid }}">Block</label>
+              {% if errors[keyblock] %}
+              <p class="error errorName">{{errors[keyblock]}}</p>
+              {% endif %}
+              <input type="text" id="block{{ blockid }}" name="block" {% if errors[keybtitle] or errors[keybsubline] or
+                errors[keyblock] %}value="{{ block.block }}" {% else %} value="{{ block.block }}" {% endif %}
+                maxlength="3" />
+           
+              <label class="" for="blocktitle{{ blockid }}">Blocktitle</label>
+              {% set keybtitle = 'blocktitle' + blockid %} 
+              
+              {% if errors[keybtitle] %}
+              <p class="error errorName">{{errors[keybtitle]}}</p>
+              {% endif %}
+              <input type="text" id="blocktitle{{ blockid }}" name="blocktitle" {% if errors[keybsubline] or errors[keybtitle]
+                or errors[keyblock] %}value="{{ block.blocktitle }}" {% else %} value="{{ block.blocktitle }} " {% endif
+                %} />
+              <label class="hide" for="btitle{{ blockid }}" hidden>{{ blockid }}</label>
+
+              <input class="hide" type="text" id="btitle{{ blockid }}" name="id" value="{{ blockid }}" hidden />
+       
+              
+              <label class="" for="blocksubline{{ blockid }}">Blocksubline</label>
+              {% set keybsubline = 'blocksubline' + blockid %} {% if errors[keybsubline] %}
+              <p class="error errorName" id="errorName">
+                {{ errors[keybsubline]}}
+              </p>
+              {% endif %}
+              <input type="text" id="blocksubline{{ blockid }}" name="blocksubline" {% if errors[keybsubline] or
+                errors[keybtitle] or errors[keyblock] %} value="{{ block.blocksubline }} " {% else %}
+                value="{{ block.blocksubline }}" {% endif %} />
+              <label class="hide" for="bsubline{{ blockid }}" hidden>{{ blockid }}</label>
+
+              <input class="hide" type="text" id="bsubline{{ blockid }}" name="id" value="{{ blockid }}" hidden />
+     
+              <button type="submit">Hinzufügen</button>
+        
+          </form>           
+  </div>
+
+{%endblock%}

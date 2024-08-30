@@ -1,0 +1,43 @@
+{% extends "layout.html" %} {%block content%}
+<div class="main-container eva-container padding-inline marginTop">
+  <h1>Anmelden</h1>
+
+  <form accept-charset="UTF-8" method="post">
+    <input type="hidden" name="_csrf" value="{{ form._csrf }}" />
+
+    <div class="eva-login">
+      {% if errors.login %}
+      <p class="Form-error">{{errors.login}}</p>
+      {% endif %}
+      <div class="form-group">
+        <label for="username">Name:</label>
+        {% if errors.username %}
+        <p class="Form-error">{{errors.username}}</p>
+        {% endif %}<input
+          formcontrolname="username"
+          name="username"
+          id="username"
+          placeholder="Name"
+          type="text"
+          maxlength="20"
+        />
+
+        <label for="password">Password:</label> {% if errors.password %}
+        <p class="Form-error">{{errors.password}}</p>
+        {% endif %}<input
+          formcontrolname="password"
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Passwort"
+          autocomplete="passwort"
+          maxlength="30"
+        />
+        <button type="submit" class="login-button">Login</button>
+        <div class="forgotten"><a class="login-link" href="/forgotten">Passwort vergessen</a></div>
+      </div>
+    </div>
+  </form>
+</div>
+
+{%endblock%}

@@ -1,0 +1,59 @@
+id,blockFilm_id,filmtitle,regie,imagepath,blocks_block
+1,wb1-1,"Mister Paper und sein Doppelgänger","Steven de Beul, Ben Tesseur",/img/Filmstills/WB1/WB1-1-MisterPaper.jpg,wb1
+2,wb1-2,"Jesus Lebt","Dominic Wittrin, Piet Grünberg",/img/Filmstills/WB1/WB1-2-JesusLebt.jpg,wb1
+3,wb1-3,"Malehood","Luca Heinze, Matthis Kählke",/img/Filmstills/WB1/WB1-3-Malehood.jpg,wb1
+4,wb1-4,"Night over R32","Felix Dierich",/img/Filmstills/WB1/WB1-4-NightOver.jpg,wb1
+5,wb1-5,"intro","Anne Isensee",/img/Filmstills/WB1/WB1-5-Intro.jpg,wb1
+6,wb1-6,getty abortions,"Franzis Kabisch",/img/Filmstills/WB1/WB1-6-GettyAbortions.jpg,wb1
+7,wb2-1,Concept of a happy mom,"Henriette Rietz",/img/Filmstills/WB2/WB2-1-ConceptofaHappyMom.jpg,wb2
+8,wb2-2,Ich pass auf dich auf,"Jessica Dürwald",/img/Filmstills/WB2/WB2-2-Ichpassaufdichauf.jpg,wb2
+9,wb2-3,Biegen und Brechen,"Falk Schuster, Mike Plitt",/img/Filmstills/WB2/WB2-3-BiegenundBrechen.jpg,wb2
+10,wb2-4,"Niemand, Nirgendwo","Carl Bagnar","/img/Filmstills/WB2/WB2-4-Niemand,Nirgendwo.jpg",wb2
+12,wb2-5,"What time is it?","Eric Giessmann, Piers Goffart",/img/Filmstills/WB2/WB2-5-WhatTimeisit.jpg,wb2
+13,wb2-6,"Gabriel -  Forever Crow","Karin Milhahn, Andre Hörmann",/img/Filmstills/WB2/WB2-6-Gabriel.jpg,wb2
+14,wb3-1,"Der Wind nimmt die mit","Ann Carolin Renninger",/img/Filmstills/WB3/WB3-1-DerWind.jpg,wb3
+15,wb3-2,"How Long Can You Hold Your Breath?","Xenia Roscher",/img/Filmstills/WB3/WB3-2-HowLong.jpg,wb3
+16,wb3-3,"Von Salz und Federn","Kilian Helmbrecht",/img/Filmstills/WB3/WB3-3-VonSalzUndFedern.jpg,wb3
+17,wb3-4,"Oschtsee","Klaus Hoefs",/img/Filmstills/WB3/WB3-4-Oschtsee.jpg,wb3
+18,wb3-5,"Flensburg süßbitter - ich schau mich hier nur rum","Schmidt Daniel,Schaub Benjamin,Majer Lea,Dandanelle Lena,Leese Antonia",/img/Filmstills/WB3/WB3-5-Flensburg.jpg,wb3
+19,wb3-6,"Hai oder Hyäne","Britt Dunse",/img/Filmstills/WB3/WB3-6-Haioder_1.jpg,wb3
+20,wb4-1,"The Waiting","Volker Schlecht",/img/Filmstills/WB4/WB4-1-TheWaiting.jpg,wb4
+21,wb4-2,"Geht schon...","Lisa Wagner",/img/Filmstills/WB4/WB4-2-Gehtschon.jpg,wb4
+22,wb4-3,"Stop kaufen","Luise Fiedler",/img/Filmstills/WB4/WB4-3-StopKaufen.jpg,wb4
+23,wb4-4,"Frankas Monster","Ina Balon",/img/Filmstills/WB4/WB4-4-FrankasMonster.jpg,wb4
+24,wb4-5,"Korruption auf Erden","Omid Mirnour",/img/Filmstills/WB4/WB4-5-KorruptionaufErden.jpg,wb4
+25,wb4-6,"Pissen aufs Patriarchat","Lena Fakler",/img/Filmstills/WB4/WB4-6-PissenaufsPatriarchat.jpg,wb4
+26,wb5-1,"Aminata","Djibril Vuille",/img/Filmstills/WB5/WB5-1-Aminata.jpg,wb5
+27,wb5-2,"Januar, 28-30","Jan Peters",/img/Filmstills/WB5/WB5-2-Januar.jpg,wb5
+28,wb5-3,"Las Flores","Miguel Goya, Tina Wilke",/img/Filmstills/WB5/WB5-3-LasFlores.jpg,wb5
+29,wb5-4,"Clown*esses","Jana Rothe",/img/Filmstills/WB5/WB5-4-clownesses.jpg,wb5
+30,wb6-1,"the great connection","Christen Bach",/img/Filmstills/WB6/WB6-1-TheGreatConnection.jpg,wb6
+31,wb6-2,"Vom Stehen und Fallen","Paul Raatz",/img/Filmstills/WB6/WB6-2-VomStehenundFallen.jpg,wb6
+32,wb6-3,"Armat","Elodie Dermange",/img/Filmstills/WB6/WB6-3-Armat.jpg,wb6
+33,wb6-4,"Sehnsucht in mir","Julian Wonn",/img/Filmstills/WB6/WB6-4-SehnsuchtinMir.jpg,wb6
+34,wb6-5,"Gonzo","Jannis Lenz",/img/Filmstills/WB6/WB6-5-Gonzo.jpg,wb6
+35,wb6-6,"Miracasas","Raphaelle Stolz",/img/Filmstills/WB6/WB6-6-Miracasas.jpg,wb6
+36,wbd-1,"Mano","Toke Madsen",/img/Filmstills/Danskprogram/Dansk1-Mano.jpg,wbd
+37,wbd-2,"Amala","Nivetha Balasubramaniam",/img/Filmstills/Danskprogram/Dansk2-Amala.jpg,wbd
+38,wbd-3,Beanboy,"Emily Hanning",/img/Filmstills/Danskprogram/Dansk3-Beanboy.jpg,wbd
+39,wbd-4,"70% Selfless","Joris Skudra",/img/Filmstills/Danskprogram/Dansk4-70Selfless.jpg,wbd
+40,wbd-5,"Sadio","Steffen Stubager,Simon Johansen",/img/Filmstills/Danskprogram/Dansk5-Sadio.jpg,wbd
+41,wbp-1,"Bur Rap","Christian Weber, Oliver Klemm, Michael Heitmann","/img/Filmstills/Plattspots/Platt1-BurRap.jpg",wbp
+42,wbp-10,"De Minsch is'n Worm","Jörn Stäger",/img/Filmstills/Plattspots/Platt-10deMinschis.jpeg,wbp
+43,wbp-11,"Striekers","Oliver Boczek",/img/Filmstills/Plattspots/Platt11-Srtiekers.jpg,wbp
+44,wbp-12,"Mehr Platt weniger Ärger","Sven Bohde",/img/Filmstills/Plattspots/Platt12MehrPlattwenigerArger.jpg,wbp
+45,wbp-2,"De Leev","Sebastian Knorr, Alexander Demtschenko",/img/Filmstills/Plattspots/Platt2-DeLeev.jpg,wbp
+46,wbp-3,"Dr Plattdüütsch","Cathrin Paulsen, Benjamin Vay, Tobias Mäckel",/img/Filmstills/Plattspots/Platt3-DrPlattduutsch.jpg,wbp
+47,wbp-4,"Fiete","Julia Schenk und Philip Drenkhahn",/img/Filmstills/Plattspots/Platt4-Fiete.jpg,wbp
+48,wbp-5,"Watt","Amar Baldradeen, Mads Wollesen, Patrick Nagler","/img/Filmstills/Plattspots/Platt5-Watt.jpg",wbp
+49,wbp-6,Wuddeln,"Gabriel Schlegelberger, Jannik Menzel, Sajarija Mazaoui",/img/Filmstills/Plattspots/Platt6-Wuddeln.jpg,wbp
+50,wbp-7,"Dat Beste an Platt","Frank Jakobs",/img/Filmstills/Plattspots/Platt7-DatbesteanPlatt.jpg,wbp
+51,wbp-8,"Ich bin Platt","Jette Jensen, Jennifer Geist, Darlene Ketelsen",/img/Filmstills/Plattspots/Platt8-Ichbinplatt.jpg,wbp
+52,wbp-9,Leuleckerland,"Marie Arnemann, Lukas Fürstenwerth, Nik Behrendt",/img/Filmstills/Plattspots/Platt9-Leuleckerland.jpg,wbp
+53,wbt-1,"Sit down, don't touch anything","Frederic Siegel",/img/Filmstills/tricky/tricky-1-SitDown.jpg,wbt
+54,wbt-2,"Die graue March","Charlotte Waltert, Alvaro Schoeck",/img/Filmstills/tricky/tricky-2-DiegraueMarch.jpg,wbt
+55,wbt-3,"Marea","Giulia Martinella",/img/Filmstills/tricky/tricky-3-Marea.jpg,wbt
+56,wbt-4,"Chicken","Anna Benner",/img/Filmstills/tricky/tricky-4-chicken.jpg,wbt
+57,wbt-5,"Dodo","Yi Luo",/img/Filmstills/tricky/tricky-5-dodo.jpg,wbt
+58,wbt-6,"Fallen","Ivan Morales Jr.",/img/Filmstills/tricky/tricky-6-fallen.jpg,wbt
+59,wbt-7,"11","Vuk Jevremovic",/img/Filmstills/tricky/tricky-7-11.jpg,wbt

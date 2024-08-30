@@ -1,0 +1,57 @@
+//     320px — 480px: Mobile devices
+//     481px — 768px: iPads, Tablets 30em
+//     769px — 1024px: Small screens, laptops 48em
+//     1025px — 1200px: Desktops, large screens 64em
+//     1201px and more —  Extra large screens, TV 75em
+
+@media screen and (min-width: 400px) {
+  .heart {
+    width: 50px;
+  }
+
+  // img {
+  //   width: 500px;
+  // }
+
+  nav ul {
+    width: max-content;
+  }
+}
+@media screen and (max-width: 340px) {
+  .bigger {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .eva-container {
+    padding: unset!important;
+  .linksblocks-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+}
+
+
+@media screen and (min-width: 1024px) {
+
+  .chartwrapper {
+    justify-self: start;
+    margin-inline: 5rem;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(60rem, auto);
+    justify-content: center;
+  }
+}
+// //! width
+
+@media screen and (min-width: 1440px) {
+}
+
+@media screen and (min-width: 1550px) {
+}
+
+@media screen and (min-width: 1820px) {
+}

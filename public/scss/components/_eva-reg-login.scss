@@ -1,0 +1,19 @@
+.eva-login {
+  padding: 1rem;
+  > .form-group {
+    padding: 1rem;
+    > input {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.login-button,
+.reg-button {
+  margin-top: 1rem;
+  padding: 5px 10px 5px 10px;
+}
+
+.forgotten {
+  margin-top: 1rem;
+}

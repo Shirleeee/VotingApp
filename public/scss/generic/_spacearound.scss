@@ -1,0 +1,17 @@
+.marginTop {
+  margin-top: 16rem;
+  @media screen and (max-width: 768px) {
+    margin-top: 10rem;
+  }
+}
+.marginLeft {
+  margin-left: 1rem;
+}
+
+.paddingTop {
+  padding-top: 9rem;
+}
+
+.paddingInline {
+  padding-inline: 10px;
+}

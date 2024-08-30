@@ -1,0 +1,45 @@
+{% extends 'layout.html' %} {%block content %}
+
+
+<div class="marginTop">
+<div class="indexEva">
+    {% if userAuth %}
+   <ul>
+        <li>
+        <a class="logOut" href="/logout/{{userid}}">Log Out</a>
+        </li>
+        <li>
+        <a href="/evaqZaa3/">Evaluation</a>
+        </li>
+
+        {% if role == 'admin' %}
+        <li>
+        <a href="/winner">Gewinner</a>
+        </li>
+        <li>
+          <a href="/feedback">Feedback</a>
+          </li>
+    
+        <li>
+          <a href="/WBBoverview">Wettbewerbsblöcke</a>
+        </li>
+        {% endif %}
+
+        {% else %}
+
+        <li>
+        <a href="/register">Registrieren</a>
+        </li>
+
+        <li>
+        <a href="/login">Login</a>
+        </li>
+   </ul>
+  {% endif %}
+
+</div>
+
+
+</div>
+
+{%endblock %}

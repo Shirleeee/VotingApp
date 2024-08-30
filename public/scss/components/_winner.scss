@@ -1,0 +1,30 @@
+#winnerMail,
+#winnerName {
+  color: var(--heart-grey);
+  border-radius: 5px;
+
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#btnWinner {
+  background-color: transparent;
+  color: #ffe7ba;
+  border: 1px solid #ffe7ba;
+  padding-inline: 30px;
+  padding-block: 10px;
+
+  border-radius: 5px;
+  cursor: pointer;
+  width: max-content;
+}
+
+.winner-container {
+  padding-top: 3rem;
+}
+
+.logOut {
+  color: var(--heart-grey);
+  width: max-content;
+  display: block;
+}

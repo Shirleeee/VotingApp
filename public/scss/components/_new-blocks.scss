@@ -1,0 +1,9 @@
+.block-links {
+    display: flex;
+    margin-block: 2rem;
+    justify-content: center;
+    li {
+        margin: 0 1rem;
+        text-decoration: underline;
+    }
+}

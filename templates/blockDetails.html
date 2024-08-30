@@ -1,0 +1,143 @@
+{% extends 'layout.html' %} {%block content %}
+
+<div class="feedbackeva panel-container">
+  {% if show == true %}
+
+  <h2>Alle Filme für den Block {{ blockname }}</h2>
+
+  {% set currentIndex = 1 %} {% set win_num = films|length + 1 %} {% for film in
+  filmss%}
+  <section id="{{ currentIndex }}" class="sec{{ currentIndex }} newFilmsBlock ">
+    <div class="section-wrapper">
+      <div class="card__container">
+        <h3 class="card__title">{{ film.filmtitle }}</h3>
+
+        <details id="filmTitleDetails{{ currentIndex }}">
+          <summary><span>&#9998;</span></summary>
+
+          <div>
+            <form id="filmTitleForm-{{ currentIndex }}" class="padding-inline filmtitle-form" method="POST">
+              <input type="hidden" name="_csrf" value="{{ form._csrf }}" />
+              <input type="hidden" name="blockname" value="{{ blockname }}" />
+              <input type="hidden" name="id" value="{{ currentIndex }}" />
+              <label hidden for="filmtitle-{{ currentIndex }}">Filmtitel</label>
+              <input class="card__title" type="text" name="filmtitle" value="{{ film.filmtitle }}"
+                id="filmtitle-{{ currentIndex }}" />
+            </form>
+          </div>
+        </details>
+
+        <p class="regie">{{ film.regie }}</p>
+        <details id="regieDetails{{ currentIndex }}">
+          <summary><span>&#9998;</span></summary>
+
+          <div>
+            <form id="regieForm-{{ currentIndex }}" class="padding-inline regie-form" method="POST">
+              <input type="hidden" name="_csrf" value="{{ form._csrf }}" />
+              <input type="hidden" name="blockname" value="{{ blockname }}" />
+              <input type="hidden" name="id" value="{{ currentIndex }}" />
+              <label hidden for="regie-{{ currentIndex }}">Regie</label>
+
+              <input class="" type="text" name="regie" value="{{ film.regie }}" id="regie-{{ currentIndex }}" />
+            </form>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <div class="card__header blockdetails_cards">
+          <picture>
+            <source type="image/webp" srcset="{{film.imagepath_webp}}" />
+            <source type="image/jpg" srcset="{{film.imagepath}}" />
+            <img rel="preload" {% if currentIndex==1 %} loading="rapid" {% else %} loading="lazy" {% endif %}
+              fetchpriority="high" src="{{
+            film.imagepath }}" width="600" height="200" alt="Filmstill von {{
+            film.filmtitle }}" />
+          </picture>
+          <details id="imgDetails{{ currentIndex }}">
+            <summary><span>&#9998;</span></summary>
+
+            <div>
+              <form id="imgForm-{{ currentIndex }}" class="padding-inline img-form" method="POST"
+                enctype="multipart/form-data">
+                <input type="hidden" name="_csrf" value="{{ form._csrf }}" />
+                <input type="hidden" name="blockname" value="{{ blockname }}" />
+                <input type="hidden" name="id" value="{{ currentIndex }}" />
+                <input type="hidden" name="oldjpg" value="{{ film.imagepath }}" />
+                <input type="hidden" name="oldwebp" value="{{ film.imagepath_webp }}" />
+                <label for="webp-{{ currentIndex }}">webp-Format:</label>
+                <input type="file" id="webp-{{ currentIndex }}" name="webp" accept="image/webp" />
+                <br />
+                <label for="jpg-{{ currentIndex }}">jpg-Format:</label>
+                <input type="file" id="jpg-{{ currentIndex }}" name="jpg" accept="image/jpeg" />
+                <br />
+                <button type="submit">Speichern</button>
+              </form>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% set currentIndex = currentIndex + 1 %} {% endfor %} {% else %}
+
+  <form action="/blockDetails/{{ blockid }}" method="POST">
+    <input type="hidden" name="_csrf" value="{{ form.csrf }}" />
+
+
+
+        <div class="add_details">
+          {% if errors.blocktitle %}
+          <p class="error errorName">{{ errors.blocktitle }}</p>
+          {% endif %}
+          <label class="" for="blocktitle">Titel</label>
+
+          <input type="text" id="blocktitle" name="blocktitle" {% if errors %}value="{{ data.blocktitle }}" {% endif %} />
+        </div>
+
+        <div class="add_details">
+          {% if errors.blocksubline %}
+            <p class="error errorName" id="errorName">{{ errors.blocksubline }}</p>
+          {% endif %}
+
+          <label class="" for="blocksubline">Subline</label>
+
+          <input type="text" id="blocksubline" name="blocksubline" {% if errors %} value="{{ data.blocksubline }}" {% endif %} />
+        </div>
+    <div class="add_details">
+      {% if errors.blocklength %}
+        <p class="error errorName" id="errorName">{{ errors.blocklength }}</p>
+      {% endif %}
+      <label class="" for="blocklength">Wieviele Filme gehören zu dem Block?</label>
+      <input type="number" {% if errors %} value="{{ data.blocklength }}" {% endif %} name="blocklength"  min="1" max="30" />
+    </div>
+
+    <div class="add_details">
+      <fieldset>
+        <legend>Spielzeiten (bspw.: 01.12 oder 31.05)</legend>
+        <label class="add_details" for="PIL">Pilkentafel</label>
+        {% if errors.keyPIL %}
+          <p class="error errorName">{{ errors.keyPIL }}</p>
+        {% endif %}
+        <input type="text" id="PIL" name="PIL" {% if errors%}value="{{ data.PIL }}" {% endif %} maxlength="5" />
+
+        <label class="add_details" for="DEU">Deutsches Haus</label>
+        {% if errors.keyDEU %}
+          <p class="error errorName" id="errorName">{{ errors.keyDEU }}</p>
+        {% endif %}
+        <input type="text" id="DEU" name="DEU" {% if errors %}
+           value="{{ data.DEU }}" {% endif %} maxlength="5" />
+      </fieldset>
+    </div>
+
+    <button class="add_details" type="submit">Hinzufügen</button>
+  </form>
+  {% endif %}
+</div>
+
+<script type="module">
+  import * as filmBlockAjax from "/js/filmBlockAjax.js";
+  filmBlockAjax.init();
+</script>
+
+{%endblock%}

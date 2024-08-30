@@ -1,0 +1,25 @@
+{% extends 'layout.html' %} {%block content %}
+<div class="marginTop">
+  <div class="indexEva">
+    <div class="winner-container">
+      <input type="hidden" name="_csrf" value="{{ form._csrf }}" />
+
+      <button type="button" id="btnWinner">Drück mich</button>
+
+      <h2 class="danke_h1">
+        Der Gewinner ist <span id="winnerName">Noch Niemand</span>.
+      </h2>
+
+      <br />
+      <p>
+        <b>mit der Mail</b><br />
+        <span id="winnerMail">Keine Mail</span>
+      </p>
+    </div>
+  </div>
+  <script type="module">
+    import * as winner from "/js/getWinner.js";
+    winner.init();
+  </script>
+  {%endblock%}
+</div>

@@ -1,0 +1,10 @@
+.main-container {
+  display: grid;
+
+  grid-template-columns: repeat(1, minmax(min(10rem, 100%), 30rem));
+  justify-content: center;
+}
+
+.padding-inline {
+  padding-inline: 1rem;
+}

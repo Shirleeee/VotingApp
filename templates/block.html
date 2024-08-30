@@ -1,0 +1,153 @@
+{% extends 'layout.html' %} 
+ {%block evaHeader %}
+{%endblock%}
+
+{%block content %}
+
+<form class="main-container padding-inline" method="POST" >
+  <input type="hidden" name="_csrf" value="{{ form.csrf }}" />
+
+  {% set currentIndex = 1 %}
+  {% set win_num = films|length + 1 %}
+  {% for film in films%}
+  <section id="{{currentIndex}}" class="sec{{currentIndex}}">
+    <div class="section-wrapper">
+
+  <div class="card__container">
+    <h3 class="card__title">{{film.filmtitle}}</h3>
+
+    <p>{{film.regie}}</p>
+  </div>
+
+
+    <div class="card">
+      <div class="card__header ">
+        <picture>
+          <source type="image/webp" srcset="{{film.imagepath_webp}}">
+          <source type="image/jpg" srcset="{{film.imagepath}}">
+          <img rel="preload" {% if currentIndex == 1 %}  loading="rapid"   {% else %} loading="lazy"  {% endif %}  fetchpriority="high" 
+          src="{{film.imagepath}}" width="600" height="200" alt="Filmstill von {{film.filmtitle}}" />
+        </picture> 
+      </div>
+    </div>
+
+    
+
+    <div class="ratings">
+      <Fieldset aria-labelledby="id-rating-label{{ currentIndex }}" role="radiogroup">
+        <legend id="id-rating-label{{ currentIndex }}" class="sr-only">Bewertung für den Film - Keine Herzen werden nicht gewertet</legend>
+        
+        {% set ratings = [6, 5, 4, 3, 2, 1] %}
+        {% for rating in ratings %}
+          <i class="fa fa-heart heart {% for num, value in data.filmValues %} {% if currentIndex == num and value == rating|string %} selected {% endif %}{% endfor %}">
+            <input aria-label="{{ currentIndex }} Herz" aria-checked="false" type="radio" value="{{ rating }}" name="film{{ currentIndex }}" aria-labelledby="label-film{{ currentIndex }}-{{ rating }}" id="film{{ currentIndex }}-{{ rating }}" class="heart__radiobtn" {% for num, value in data.filmValues %} {% if currentIndex == num and value == rating|string %} checked {% endif %}{% endfor %} />
+            <label id="label-film{{ currentIndex }}-{{ rating }}" class="heart__label" for="film{{ currentIndex }}-{{ rating }}">{{ rating }}</label>
+          </i>
+      
+        {% endfor %}
+        <i class="cancel-hearts " tabindex="-1" > 
+          <input type="radio" name="film{{ currentIndex }}" value="0" id="cancel-film{{ currentIndex }}" aria-checked="false" class="heart__radiobtn" aria-label="Kein Herz" />
+          <label for="cancel-film{{ currentIndex }}">
+            <svg role="img" alt="Ein Kreuz also Kein Herz" id="label-film0" class="cancel-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+            </svg>
+          </label>
+        </i>
+
+      </Fieldset>
+      <p>{{text("noHearts")}}</p>
+
+    </div>
+    
+    <div class="btn-container btn-next-container">
+      <button class="btn next" name="{{loop.index}}" type="button" >
+        {% if films.length == loop.index %}  {{text("nexttoform")}}   {% else %}  {{text("nextfilm")}}   {% endif %}  <br> <i class="fa-solid fa-arrow-down btn-arrow"></i>
+      </button>
+    </div>
+  </div>
+   </section>
+  {% set currentIndex = currentIndex + 1 %} 
+  
+  {% endfor %}
+
+  <section id="{{win_num}}" class="sec{{win_num}} win">
+    <div class="section-wrapper">
+
+    <h4 class="wintext">{{text("wintext")}}</h4>
+    <div class="name__input">
+      <label for="name">{{text("yourname")}}</label>
+      <br />
+      {% if errors.name %}
+      <p class="error errorName" id="errorName">{{text("errorName")}}</p>
+      {% endif %}
+      <input class="input_larger" type="text" name="name" autocomplete="on" placeholder={{text("placeholderName")}} value="{{ data.name }}" id="name" />
+    </div>
+    <div class="email__input">
+      <label for="email">{{text("yourmail")}}</label>
+      <br />
+
+      {% if errors.email %}
+      <p class="error errorEmail" id="errorEmail">{{text("errorMail")}}</p>
+      {% endif %}
+  
+      <input class="input_larger" type="text" name="email" placeholder="E-Mail" autocomplete="on" value="{{data.email}}" id="email" />
+    </div>
+    <div class="feedback">
+        <label class="label-textarea" for="feedback">{{text("feedback")}}
+        </label>
+        <br />
+        {% if errors.feedback %}
+          <p class="error errorFeedback" id="errorFeedback">{{text("errorFeedback")}}</p>
+        {% endif %}
+
+        <textarea name="feedback" placeholder="{{text("placeholderFeedback")}}" id="feedback">{% if data.feedback %}{{ data.feedback }}{% endif %}</textarea>
+
+      </div>
+
+      <p class="datenweiter__text margin">{{text("infonotice")}}</p>
+
+      <div class="intro__text">
+        {% if errors.datasec %}
+          <p class="error errDatasec" id="errorDatasec" >{{text("errorDatasec")}}</p>
+        {% endif %}  
+      </div>
+
+      <div class="datenschutz__input">     
+        <input class="datasec__checkbox-input" type="checkbox" id="datasec" name="datasec">
+        <label class="datasec__checkbox-label" for="datasec" >{{text("datasec1")}}<a href="/datenschutz" >{{text("datasec2")}}</a>
+        </label>    
+      </div> 
+
+    {% if errors.film %}
+    <p class="error errFilm" id="errorFilm" >{{text("errorFilm")}}</p>
+    {% endif %}  
+    <div class="btn-container">
+
+      <div class="btn-main-container">
+       
+          <button class="btn up" id="prevFilm" name="prevFilm" type="button" >
+            {{text("again")}}  <br> <i class="fa-solid fa-arrow-up btn-arrow"></i>
+          </button>
+
+        <button class="btn send-btn btn-round" id="submitBtn" type="submit" >{{text("send")}}</button>
+      </div>
+
+    </div>
+  </div>
+
+  </section>
+</form>
+      <script type="module" >       
+        import * as prev from "/js/preventReload.js";
+        prev.init();
+      </script>
+      <script type="module" >
+        import * as hearts from "/js/hearts.js";
+        hearts.init();
+      </script>   
+      <script type="module" >       
+        import * as next from "/js/nextBtn.js";
+        next.init();
+      </script>
+
+{%endblock%}

@@ -1,0 +1,15 @@
+textarea {
+  padding: 10px 15px;
+  border-radius: var(--border-rad-1);
+  background-color: var(--input-background-color);
+
+  border: 1px solid var(--highlight1);
+  // margin-block: 2rem;
+  width: 100%;
+}
+
+textarea:focus {
+  outline: none !important;
+  border-color: var(--highlight2);
+  box-shadow: 0 0 10px var(--highlight2);
+}

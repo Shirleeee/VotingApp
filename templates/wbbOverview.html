@@ -1,0 +1,190 @@
+{% extends 'layout.html' %} {%block content %}
+
+
+  <div class="feedbackeva panel-container wbboverview">
+    <h2>Wettbewerbsblöcke Übersicht</h2>
+    <div>
+      <ul class="block-links">
+        <li><a href="/deleteAllBlocks">Alle Löschen</a></li>
+        <li><a href="/addNewBlock">Neuen Block hinzufügen</a></li>
+      </ul>
+    </div>
+    <table class="feedback-table">
+      <thead>
+        <tr>
+          <th scope="col">Block</th>
+          <th scope="col">Blocktitle</th>
+          <th scope="col">Blocksubline</th>
+          <th scope="col">Pilkentafel</th>
+          <th scope="col">Deutsches Haus</th>
+          <th scope="col">Ändern</th>
+          <th scope="col">Löschen</th>
+          <th scope="col">Filme hinzufügen</th>
+        </tr>
+      </thead>
+      <tbody class="dates">
+        {% for block in allBlocks %}
+  
+
+        <tr>
+          <form action="/changeBlock/{{ block.id }}" method="POST">
+            <input type="hidden" name="_csrf" value="{{ form.csrf }}" />
+
+            <td> 
+              {% set keyblock = 'block' + block.id %}
+
+              <label class="sr-only" for="block{{ block.id }}">Block</label>
+              {% if errors[keyblock] %}
+              <p class="error errorName">{{errors[keyblock]}}</p>
+              {% endif %}
+              <input type="text" id="block{{ block.id }}" name="block" {% if errors[keybtitle] or errors[keybsubline] or
+                errors[keyblock] %}value="{{ block.block }}" {% else %} value="{{ block.block }}" {% endif %}
+                maxlength="3" />
+            </td>
+
+            <td> 
+              <label class="sr-only" for="blocktitle{{ block.id }}">blocktitle</label>
+              {% set keybtitle = 'blocktitle' + block.id %} 
+              
+              {% if errors[keybtitle] %}
+              <p class="error errorName">{{errors[keybtitle]}}</p>
+              {% endif %}
+              <input type="text" id="blocktitle{{ block.id }}" name="blocktitle" {% if errors[keybsubline] or errors[keybtitle]
+                or errors[keyblock] %}value="{{ block.blocktitle }}" {% else %} value="{{ block.blocktitle }} " {% endif
+                %} />
+              <label class="hide" for="btitle{{ block.id }}" hidden>{{ block.id }}</label>
+
+              <input class="hide" type="text" id="btitle{{ block.id }}" name="id" value="{{ block.id }}" hidden />
+            </td>
+
+            <td> 
+              <label class="sr-only" for="blocksubline{{ block.id }}">blocksubline</label>
+              {% set keybsubline = 'blocksubline' + block.id %} {% if errors[keybsubline] %}
+              <p class="error errorName" id="errorName">
+                {{ errors[keybsubline]}}
+              </p>
+              {% endif %}
+              <input type="text" id="blocksubline{{ block.id }}" name="blocksubline" {% if errors[keybsubline] or
+                errors[keybtitle] or errors[keyblock] %} value="{{ block.blocksubline }} " {% else %}
+                value="{{ block.blocksubline }}" {% endif %} />
+              <label class="hide" for="bsubline{{ block.id }}" hidden>{{ block.id }}</label>
+
+              <input class="hide" type="text" id="bsubline{{ block.id }}" name="id" value="{{ block.id }}" hidden />
+            </td>
+            <td>
+              <label class="sr-only" for="PIL{{ block.id }}"
+                >Pilkentafel</label
+              >
+              {% set keyPIL = 'PIL' + block.id %} {% if errors[keyPIL] %}
+              <p class="error errorName">{{errors[keyPIL]}}</p>
+              {% endif %}
+              <input
+                type="text"
+                id="PIL{{ block.id }}"
+                name="PIL"
+                {%
+                if
+                errors[keyDEU]
+                or
+                errors[keyPIL]
+                or
+                errors[keyblock]
+                %}value="{{ data.PIL }}"
+                {%
+                else
+                %}
+                value="{{ block.PIL }}"
+                {%
+                endif
+                %}
+                maxlength="5"
+              />
+              <label class="hide" for="P{{ block.id }}" hidden
+                >{{ block.id }}</label
+              >
+
+              <input
+                class="hide"
+                type="text"
+                id="P{{ block.id }}"
+                name="id"
+                value="{{ block.id }}"
+                hidden
+              />
+            </td>
+            <td>
+              <label class="sr-only" for="DEU{{ block.id }}"
+                >Deutsches Haus</label
+              >
+              {% set keyDEU = 'DEU' + block.id %} {% if errors[keyDEU] %}
+              <p class="error errorName" id="errorName">
+                {{ errors[keyDEU]}}
+              </p>
+              {% endif %}
+              <input
+                type="text"
+                id="DEU{{ block.id }}"
+                name="DEU"
+                {%
+                if
+                errors[keyDEU]
+                or
+                errors[keyPIL]
+                or
+                errors[keyblock]
+                %}
+                value="{{ data.DEU }}"
+                {%
+                else
+                %}
+                value="{{ block.DEU }}"
+                {%
+                endif
+                %}
+                maxlength="5"
+              />
+              <label class="hide" for="D{{ block.id }}" hidden
+                >{{ block.id }}</label
+              >
+
+              <input
+                class="hide"
+                type="text"
+                id="D{{ block.id }}"
+                name="id"
+                value="{{ block.id }}"
+                hidden
+              />
+            </td>
+            <td>
+              <button type="submit">Ändern</button>
+            </td>
+          </form>
+            <td>
+              <label class="sr-only" for="delete{{ block.id }}">Löschen</label>
+              <form action="/deleteBlock/{{ block.id }}" method="POST">
+                <button id="delete{{ block.id }}" type="submit">
+                  Löschen
+                </button>
+              </form>
+            </td>
+            <td>
+              <label class="sr-only" for="blockDetails{{ block.id }}">Block Details</label>
+              <a href="/blockDetails/{{ block.id }}" >
+                <button id="blockDetails{{ block.id }}" type="button">
+                  Block Details
+                </button>
+              </form>
+            </td>
+          
+        </tr>
+       
+        {% endfor %}
+      </tbody>
+    </table>
+    {# <form class="datesForm" action="/addNewBlock" method="POST">
+      <button type="submit">Neu Hinzufügen</button>
+    </form> #}
+  </div>
+
+{%endblock%}

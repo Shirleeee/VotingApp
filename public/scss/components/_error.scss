@@ -1,0 +1,51 @@
+// .error-linkBack {
+//     text-decoration: underline;
+// }
+
+.error {
+  display: flex;
+  align-items: center;
+
+  border-radius: 5px;
+  padding: 1rem;
+  border-radius: 5px;
+
+  // width: max-content;
+  // gap: 1rem;
+}
+
+.error:after {
+  font-size: 1.2rem;
+}
+
+.error {
+  background-color: #f44336b0;
+  height: 60px;
+}
+
+.errUpper {
+  background-color: #fc706680;
+}
+
+.errDatasec {
+  background-color: rgba(252, 157, 102, 0.502);
+
+}
+
+.errFilm{
+  background-color: rgba(252, 157, 102, 0.502);
+  height: 120px;
+
+}
+#hiddenErrors {
+  display: none;
+}
+.intro__text {
+  padding: 1rem 0 1rem 0;
+}
+
+
+.login-link {
+  text-decoration: underline!important;
+
+}

@@ -1,0 +1,28 @@
+// section {
+//   height: 32rem;
+//   // scroll-snap-align: start;
+//   // scroll-snap-stop: always;
+//   // position: relative;
+//   padding-top: 9rem;
+// }
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 6rem;
+  @media screen and (min-height: 768px) {
+    padding-top: 9rem;
+  }
+  height: 100vh;
+}
+.win {
+  padding-top: 5rem;
+
+  @media screen and (min-height: 768px) {
+    padding-top: 9rem;
+  }
+}
+.section-wrapper {
+  padding-top: 5rem;
+}

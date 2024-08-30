@@ -1,0 +1,90 @@
+p,
+.wintext {
+  font-size: 1.1rem;
+  // font-weight: 600;
+  font-family: "gill_lightitalic", sans-serif;
+  color: var(--primary-250);
+}
+
+.error {
+  color: rgb(7, 5, 57);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+}
+h1 {
+  font-family: "joanna_semibold", sans-serif;
+  // font-size: 2.25rem;
+  font-size: 1.4rem;
+}
+.bigger {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 1.3rem;
+}
+
+h3 {
+  font-family: "gill-sans-nova", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.1rem;
+  font-size: 1.15rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+hr {
+  background: var(--font-color);
+}
+////!
+///
+.filmvotelinks {
+  font-family: "joanna_extrabold", sans-serif;
+  font-size: 1.6em;
+}
+//////!
+
+body {
+  font-family: "gill", sans-serif;
+  color: var(--font-color);
+}
+
+textarea,
+input {
+  font-family: inherit;
+  color: var(--font-color);
+  letter-spacing: 0.01em;
+}
+
+input[type="text"] {
+  color: var(--font-color);
+  // font-size: 17px;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+}
+
+.card__title {
+  // font-size: 1rem;
+  text-transform: uppercase;
+  // color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 1.75);
+}
+
+.abschicken__button {
+  font-family: "joanna_extrabold", sans-serif;
+  letter-spacing: 3px;
+  font-size: 1.5rem;
+}
+
+///
+/// EVA
+.linksblocks-container {
+  & .chosenBlock {
+    color: #ee9999;
+    font-size: 26px;
+    font-family: "gill-sans-nova", sans-serif;
+  }
+}

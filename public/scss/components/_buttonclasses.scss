@@ -1,0 +1,67 @@
+.btn {
+  // margin-block: 2rem;
+  margin-inline: 0 auto;
+  border-color: transparent;
+  // border-radius: var(--border-rad-1);
+  background-color: var(--primary-900);
+  color: var(--primary-250);
+  width: 7rem;
+  place-self: center;
+  justify-self: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  @media screen and (min-height: 768px) {
+    padding: 0.5rem;
+  }
+}
+.btn-arrow {
+  // background-color: var(--primary-250);
+  color: var(--primary-250);
+  padding-top: 12px;
+  transform: scale(1.5);
+}
+.btn-round {
+  border-radius: 0.5rem;
+}
+
+.send-btn,
+.again-btn {
+  // display: none;
+  color: var(--primary-900);
+  // border-radius: var(--border-rad-2);
+  // border-color: var(--red)
+  background-color: var(--primary-250);
+
+  border: none;
+  text-decoration: underline;
+
+  box-shadow: rgba(16, 21, 23, 0.56) 0px 22px 70px 4px;
+}
+.again-btn {
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--primary-250);
+}
+.btn-main-container {
+  display: flex;
+  flex-direction: row;
+}
+.btn-container {
+  display: grid;
+
+  & > * {
+    margin: 2rem;
+  }
+
+  & > a {
+    justify-self: center;
+  }
+}
+
+.btn-further-container,
+.btn-next-container,
+#prevFilm {
+  display: none;
+}

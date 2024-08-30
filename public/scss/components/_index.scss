@@ -1,0 +1,49 @@
+.indexEva {
+  // max-width: initial;
+  display: grid;
+  justify-content: center;
+  // width: fit-content;
+  // padding: 10px;
+
+  margin: auto;
+  > ul {
+    display: flex;
+    flex-direction: row;
+    // width: max-content;
+    flex-wrap: wrap;
+    > li {
+      > a {
+        border-radius: var(--border-rad-1);
+        border: 2px solid var(--primary-250);
+        font-size: 2rem;
+        padding: 4rem;
+        margin: 15px;
+        display: block;
+        border-radius: var(--border-rad-1);
+        border: 2px solid var(--primary-250);
+        font-size: 2rem;
+        padding: 4rem;
+        margin: 15px;
+        @media screen and (max-width: 1366px) {
+          padding: 1.8rem;
+          margin: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 1rem;
+          justify-content: center;
+          text-align: center;
+          padding: 1.4rem;
+          display: flex;
+          width: 100%;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      display: flex;
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
