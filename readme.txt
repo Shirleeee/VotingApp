@@ -15,9 +15,9 @@ Registrierung von max. 3 Leute möglich
 https://publikumspreis.filmkorte.de/register
 
 https://publikumspreis.filmkorte.de/login
-admin-login:
-Name:s
-Passwort:s
+admin-TEST-login:
+Name:shirley
+Passwort:test
 
 
 API
